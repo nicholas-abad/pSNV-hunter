@@ -23,3 +23,7 @@ Currently, pSNV Hunter is within a closed beta form. However, if you'd like acce
    ```
    python src/run_visualization_tool.py
    ```
+
+## Tutorial
+#### Loading in an example dataset
+![loading in the dataset](./assets/loading_in_data.png)
