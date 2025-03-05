@@ -28,5 +28,8 @@ Currently, pSNV Hunter is within a closed beta form. However, if you'd like acce
 #### Loading in two example datasets
 ![loading in the dataset](./assets/loading_in_data.png)
 <br>
-#### Choosing which datasets to 
+#### Choose the dataset to analyze
 ![choosing dataset](./assets/choosing_dataset.png)
+<br>
+#### Filter, sort, and download the table
+![filtering, sorting, and downloading](./assets/filtering_sorting_downloading.png)
