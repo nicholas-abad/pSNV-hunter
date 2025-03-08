@@ -1,11 +1,8 @@
 <h1 align="center">pSNV Hunter</h1>
-<html align="center">
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/nicholas-abad/psnv-hunter) ![Github Primarily Language](https://img.shields.io/badge/language-python-yellow) ![Github Number of Dependencies](https://img.shields.io/badge/number_of_dependencies-122-blue) ![GitHub repo size](https://img.shields.io/github/repo-size/nicholas-abad/psnv-hunter)
 
-</html>
-
-<h5 align="center">Created by Nicholas Abad<sup>1,2,</sup>, Cindy Körner<sup>3</sup> and Lars Feuerbach<sup>1</sup></h3>
+<h4>Created by Nicholas Abad<sup>1,2,</sup>, Cindy Körner<sup>3</sup> and Lars Feuerbach<sup>1</sup></h3>
 
 <html><sup>1</sup></html> Division of Applied Bioinformatics at the German Cancer Research Center (DKFZ)
 <br>
@@ -41,17 +38,17 @@ Currently, pSNV Hunter is within a closed beta form. However, if you'd like acce
    ```
 5. The prior Python command should output the following:
 
-<center>
-<img src="./assets/run_visualization_tool.png">
-</center>
+<p align="center">
+   <img src="./assets/run_visualization_tool.png">
+</p>
 
 By default, pSNV Hunter will be running locally at the location listed, which by default and in this case is [http://127.0.0.1:8050](http://127.0.0.1:8050) or [localhost:8050](localhost:8050).
 
 6. You can either click the link if it’s clickable or open a browser and manually type the full link into the address bar. An example can be seen below:
 
-<center>
-<img src="./assets/browser.png" width=80% height=80%>
-</center>
+<p align="center">
+   <img src="./assets/browser.png" width=80% height=80%>
+</p>
 
 7. When you're done using **_pSNV Hunter_**, make sure to stop it from running in the command line by pressing `Ctrl + c`.
 
@@ -65,7 +62,9 @@ You can load two example datasets included in the repository by clicking the `Lo
 
 Once files are loaded in, basic details such as the filename, the number of rows and the number of columns can be seen. To proceed, click on the `Go to File Viewer` button [Step 2].
 
-![loading in the dataset](./assets/loading_in_data.png)
+<p align="center">
+   <img src="./assets/loading_in_data.png">
+</p>
 
 #### Choose the dataset to analyze
 
@@ -73,19 +72,22 @@ A window will appear on the left, displaying the uploaded file names along with 
 
 If you need to go back to the file uploader page, click the red `Return to File Uploader` button at the bottom left.
 
-![choosing dataset](./assets/choosing_dataset.png)
+<p align="center">
+   <img src="./assets/choosing_dataset.png">
+</p>
 
 #### Filter, sort, and download the table
 
 The file you selected will now be displayed in a table-like format as seen below. Conversely, to switch between the uploaded files click on the `View Uploaded Files` button.
-
-![filtering, sorting, and downloading](./assets/filtering_sorting_downloading.png)
+<p align="center">
+   <img src="./assets/filtering_sorting_downloading.png">
+</p>
 
 Using this table, you can filter, sort, and download the dataset. The example below demonstrates how to: (1) filter by a specific string column (e.g., GENE), (2) filter a numerical column (e.g., score) using mathematical expressions, (3) sort the table by a numerical column, and (4) download the filtered dataset.
 
-<center>
-<img src="./assets/vertical_filtering_sorting_downloading.png" width=90% height=90%>
-</center>
+<p align="center">
+   <img src="./assets/vertical_filtering_sorting_downloading.png" width=90% height=90%>
+</p>
 <br>
 
 #### Selecting a mutation
@@ -94,9 +96,9 @@ To view detailed information about an individual, sample-specific mutation, clic
 
 After selecting a mutation, you can explore various tabs [Step 2] to view information and graphs related to the chosen mutation.
 
-<center>
-<img src="./assets/selecting_a_mutation.png" width=90% height=90%>
-</center>
+<p align="center">
+   <img src="./assets/selecting_a_mutation.png" width=90% height=90%>
+</p>
 
 In short, the seven different selectable tabs can be summarized here:
 
