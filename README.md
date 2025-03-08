@@ -1,8 +1,25 @@
-# pSNV Hunter
+<h1 align="center">pSNV Hunter</h1>
+<html align="center">
 
-Promoter SNV (pSNV) Hunter is a comprehensive data aggregation and visualization tool particularly used to identify functional promoter SNVs within the REMIND-Cancer project.
+![GitHub last commit](https://img.shields.io/github/last-commit/nicholas-abad/psnv-hunter) ![Github Primarily Language](https://img.shields.io/badge/language-python-yellow) ![Github Number of Dependencies](https://img.shields.io/badge/number_of_dependencies-122-blue) ![GitHub repo size](https://img.shields.io/github/repo-size/nicholas-abad/psnv-hunter)
+
+</html>
+
+<h5 align="center">Created by Nicholas Abad<sup>1,2,</sup>, Cindy Körner<sup>3</sup> and Lars Feuerbach<sup>1</sup></h3>
+
+<html><sup>1</sup></html> Division of Applied Bioinformatics at the German Cancer Research Center (DKFZ)
+<br>
+<html><sup>2</sup></html> Faculty of Engineering (Molecular Biotechnology) at Heidelberg University
+<br>
+<html><sup>3</sup></html> Division of Molecular Genome Analysis at the German Cancer Research Center (DKFZ)
+
+---
+
+***Promoter SNV (pSNV) Hunter*** is a comprehensive data aggregation and visualization tool particularly used to identify functional promoter SNVs within the [REMIND-Cancer project](https://github.com/nicholas-abad/REMIND-Cancer).
 
 Currently, pSNV Hunter is within a closed beta form. However, if you'd like access, please contact Nicholas Abad at nicholas.a.abad@gmail.com.
+
+---
 
 ## Run pSNV Hunter
 
@@ -84,11 +101,36 @@ After selecting a mutation, you can explore various tabs [Step 2] to view inform
 In short, the seven different selectable tabs can be summarized here:
 
 - **`Patient Info`**: Key details about the mutation, including the number of recurrent mutations (i.e., occurrences of the mutation at this genomic location in other samples), raw and normalized expression values, whether it is classified as a known cancer gene (i.e., listed in the Cancer Gene Census), its presence in a region of open chromatin, allele frequency, CpG island status, and any transcription factor binding sites (TFBSs) that are created or disrupted.
-- **`Gene`**:
-- **`Transcription Factors`**:
-- **`IGV Genome Browser`**:
-- **`Deep Pileup`**:
-- **`Notes`**:
+- **`Gene`**: This tab provides information on the gene linked to the SNV, including its expression levels and functional details sourced from NCBI.
+- **`Transcription Factors`**: Displays expression levels of transcription factor binding sites (TFBS) predicted to be created or disrupted, along with their associated functions. Additionally, JASPAR2022 sequence logo plots for the TFBS are available.
+- **`IGV Genome Browser`**: Integrates the IGV genome browser with the NCBI HG19 genome track and ChromHMM-derived regions of open chromatin for in-depth visualization.
+- **`Deep Pileup`**: Presents multiple quality control plots from DeepPileup to assess the signal clarity at the genomic location in question.
+- **`Genome Tornado Plots`**: Displays focal copy number alterations (e.g., amplifications and deletions) in the context of the entire PCAWG dataset.
+- **`Notes`**: Allows users to take, save, and export notes related to individual mutations for reference.
+
+## Exploring the Seven Analysis Tabs
+
+### `Patient Info`
+
+### `Gene`
+
+### `Transcription Factors`
+
+### `IGV Genome Browser`
+
+### `Deep Pileup`
+
+### `Genome Tornado Plots`
+
+### `Notes`
+
+## To-do:
+
+As this is still in the beta version, I've compiled a list of features that I still need to integrate below. If you'd like to add to this list, please feel free to contact me, open an issue on GitHub and/or send me a pull request!
+
+- [ ] Containerize with Docker
+- [ ] Ensure compatibility with regular VCFs
+- [ ] Properly implement the `Interesting` column
 
 ## Additional Information:
 
