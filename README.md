@@ -1,4 +1,6 @@
-<h1 align="center">pSNV Hunter</h1>
+<p align="center">
+   <img src="./assets/pSNV_Hunter.png" width=70% height=70%>
+</p>
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/nicholas-abad/psnv-hunter) ![Github Primarily Language](https://img.shields.io/badge/language-python-yellow) ![Github Number of Dependencies](https://img.shields.io/badge/number_of_dependencies-122-blue) ![GitHub repo size](https://img.shields.io/github/repo-size/nicholas-abad/psnv-hunter)
 
