@@ -51,7 +51,7 @@ By default, pSNV Hunter will be running locally at the location listed, which by
 6. You can either click the link if it’s clickable or open a browser and manually type the full link into the address bar. An example can be seen below:
 
 <p align="center">
-   <img src="./assets/browser.png" width=80% height=80%>
+   <img src="./assets/browser.png" width=60% height="auto">
 </p>
 
 7. When you're done using **_pSNV Hunter_**, make sure to stop it from running in the command line by pressing `Ctrl + c`.
@@ -77,7 +77,7 @@ A window will appear on the left, displaying the uploaded file names along with 
 If you need to go back to the file uploader page, click the red `Return to File Uploader` button at the bottom left.
 
 <p align="center">
-   <img src="./assets/choosing_dataset.png">
+   <img src="./assets/choosing_dataset.png" width=80% height="auto">
 </p>
 
 #### Filter, sort, and download the table
@@ -90,7 +90,7 @@ The file you selected will now be displayed in a table-like format as seen below
 Using this table, you can filter, sort, and download the dataset. The example below demonstrates how to: (1) filter by a specific string column (e.g., GENE), (2) filter a numerical column (e.g., score) using mathematical expressions, (3) sort the table by a numerical column, and (4) download the filtered dataset.
 
 <p align="center">
-   <img src="./assets/vertical_filtering_sorting_downloading.png" width=90% height=90%>
+   <img src="./assets/vertical_filtering_sorting_downloading.png" width=70% height="auto">
 </p>
 <br>
 
@@ -101,7 +101,7 @@ To view detailed information about an individual, sample-specific mutation, clic
 After selecting a mutation, you can explore various tabs [Step 2] to view information and graphs related to the chosen mutation.
 
 <p align="center">
-   <img src="./assets/selecting_a_mutation.png" width=90% height=90%>
+   <img src="./assets/selecting_a_mutation.png" width=70% height="auto">
 </p>
 
 In short, the seven different selectable tabs can be summarized here:
