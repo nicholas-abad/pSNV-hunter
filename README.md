@@ -79,6 +79,7 @@ If you need to go back to the file uploader page, click the red `Return to File 
 #### Filter, sort, and download the table
 
 The file you selected will now be displayed in a table-like format as seen below. Conversely, to switch between the uploaded files click on the `View Uploaded Files` button.
+
 <p align="center">
    <img src="./assets/filtering_sorting_downloading.png">
 </p>
@@ -102,7 +103,7 @@ After selecting a mutation, you can explore various tabs [Step 2] to view inform
 
 In short, the seven different selectable tabs can be summarized here:
 
-- **`Patient Info`**: Key details about the mutation, including the number of recurrent mutations (i.e., occurrences of the mutation at this genomic location in other samples), raw and normalized expression values, whether it is classified as a known cancer gene (i.e., listed in the Cancer Gene Census), its presence in a region of open chromatin, allele frequency, CpG island status, and any transcription factor binding sites (TFBSs) that are created or disrupted.
+- **`Patient Info`**: Key details about the mutation, including the number of recurrent mutations, raw and normalized expression values, whether it is classified as a known cancer gene (i.e., listed in the Cancer Gene Census), its presence in a region of open chromatin, allele frequency, CpG island status, and any transcription factor binding sites (TFBSs) that are created or disrupted.
 - **`Gene`**: This tab provides information on the gene linked to the SNV, including its expression levels and functional details sourced from NCBI.
 - **`Transcription Factors`**: Displays expression levels of transcription factor binding sites (TFBS) predicted to be created or disrupted, along with their associated functions. Additionally, JASPAR2022 sequence logo plots for the TFBS are available.
 - **`IGV Genome Browser`**: Integrates the IGV genome browser with the NCBI HG19 genome track and ChromHMM-derived regions of open chromatin for in-depth visualization.
@@ -113,6 +114,36 @@ In short, the seven different selectable tabs can be summarized here:
 ## Exploring the Seven Analysis Tabs
 
 ### `Patient Info`
+
+**Description**
+The `Patient Info` tab is by default the first tab chosen when selecting an individual mutation to analyze. Here, the name of the gene that the pSNV is associated with, which in this example is _ANKRD53_, is shown at the top as well as the mutations nucleotide change (e.g. G to A), the chromosomal location and the strand the SNV was found in.
+
+Furthermore, the eight boxes represent key mutational details. First, _Recurrence Mutations_ refers to the number of occurrences of the mutation at this genomic location in other samples, which has been used in identifying functional pSNVs such as within the promoter of _TERT_. Secondly, the raw and Z-score normalized expression values can be seen here. Within the REMIND-Cancer pipeline, normalization was relative to only those samples within the cohort.
+
+Next, the presence of this mutation within the Cancer Gene Census (CGC) database is noted here such that a value of `True` means that this gene is a known cancer gene. Additionally, the fact that this mutation lays in a region of open chromatin according to ChromHMM annotations is denoted here. To specifically see regions of open chromatin, refer to the `IGV Genome Browser` where these are listed as a track. Furthermore, the variant allele frequency as well as whether this mutation lays within a CpG island is also denoted.
+
+The last two boxes contain information regarding the predicted created and destroyed TFBS' according to JASPAR2022. Here, a TFBS is predicted to be created if it's binding affinity is greater than or equal to 11 whereas it's predicted to be destroyed if it's less than or equal to 0.09.
+
+**Example**
+<p align="center">
+   <img src="./assets/patient_info.png" width=90% height=90%>
+</p>
+
+**Notes About The Code**
+```
+In order for these boxes to properly be displayed, the _config.py file can be edited such that the names of the columns in your dataset match.
+
+Edit the keys within the variable DATAFRAME_SETTINGS in order to properly match your dataset. Below are the keys that correspond to how the boxes are created within the code:
+1. Recurrence Mutations: name_of_paths_with_recurrence_column
+2. Gene Expression: name_of_expression_column AND name_of_normalized_expression_column
+3. Within CGC List: (not incorporated yet)
+4. Open Chromatin: (not incorporated yet)
+5. Allele Frequency: (not incorporated yet)
+6. CpG Island: (not incorporated yet)
+7. Created Transcription Factors: name_of_column_with_list_of_created_tfbs
+8. Destroyed Transcription Factors: name_of_column_with_list_of_destroyed_tfbs
+
+```
 
 ### `Gene`
 
