@@ -120,6 +120,7 @@ In short, the seven different selectable tabs can be summarized here:
 ### `Patient Info`
 
 **Description**
+
 The `Patient Info` tab is by default the first tab chosen when selecting an individual mutation to analyze. Here, the name of the gene that the pSNV is associated with, which in this example is _ANKRD53_, is shown at the top as well as the mutations nucleotide change (e.g. G to A), the chromosomal location and the strand the SNV was found in.
 
 Furthermore, the eight boxes represent key mutational details. First, _Recurrence Mutations_ refers to the number of occurrences of the mutation at this genomic location in other samples, which has been used in identifying functional pSNVs such as within the promoter of _TERT_. Secondly, the raw and Z-score normalized expression values can be seen here. Within the REMIND-Cancer pipeline, normalization was relative to only those samples within the cohort.
@@ -134,7 +135,7 @@ The last two boxes contain information regarding the predicted created and destr
 </p>
 
 **Notes About The Code**
-```
+
 In order for these boxes to properly be displayed, the _config.py file can be edited such that the names of the columns in your dataset match.
 
 Edit the keys within the variable DATAFRAME_SETTINGS in order to properly match your dataset. Below are the keys that correspond to how the boxes are created within the code:
@@ -146,8 +147,6 @@ Edit the keys within the variable DATAFRAME_SETTINGS in order to properly match 
 6. CpG Island: (not incorporated yet)
 7. Created Transcription Factors: name_of_column_with_list_of_created_tfbs
 8. Destroyed Transcription Factors: name_of_column_with_list_of_destroyed_tfbs
-
-```
 
 ### `Gene`
 
