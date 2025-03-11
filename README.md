@@ -24,23 +24,19 @@ Currently, pSNV Hunter is within a closed beta form. However, if you'd like acce
 
 ## Run pSNV Hunter
 
-1. Clone the repository and the submodule
+1. Clone the repository.
    ```
-   git clone --recurse-submodules -j8 https://github.com/nicholas-abad/pSNV-hunter.git
+   git clone https://github.com/nicholas-abad/pSNV-hunter.git
    ```
-2. Open the terminal and change directories into `REMIND-Cancer-visualization `
-   ```
-   cd pSNV-hunter/REMIND-Cancer-visualization
-   ```
-3. Download the necessary Python packages using .
+2. Download the necessary Python packages using pip.
    ```
    pip install -r requirements.txt
    ```
-4. Run pSNV Hunter
+3. Run pSNV Hunter
    ```
    python src/run_visualization_tool.py
    ```
-5. The prior Python command should output the following:
+4. The prior Python command should output the following:
 
 <p align="center">
    <img src="./assets/run_visualization_tool.png">
