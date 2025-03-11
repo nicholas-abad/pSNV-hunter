@@ -10,9 +10,6 @@
 <br>
 <html><sup>3</sup></html> Division of Molecular Genome Analysis at the German Cancer Research Center (DKFZ)
 
-![Github Primarily Language](https://img.shields.io/badge/repository_maintainer-nicholas_abad_(nicholas.a.abad@gmail.com)-lightgreen)
----
-
 ***Promoter SNV (pSNV) Hunter*** is a comprehensive data aggregation and visualization tool particularly used to identify functional promoter SNVs within the [REMIND-Cancer project](https://github.com/nicholas-abad/REMIND-Cancer).
 
 Currently, pSNV Hunter is within a closed beta form. However, if you'd like access, please contact Nicholas Abad at nicholas.a.abad@gmail.com.
@@ -119,7 +116,9 @@ In short, the seven different selectable tabs can be summarized here:
 ## Exploring the Seven Analysis Tabs
 
 ### `Patient Info`
+
 **Example**
+
 <p align="center">
    <img src="./assets/patient_info.png" width=90% height=90%>
 </p>
@@ -142,6 +141,7 @@ To ensure proper display of these boxes, update the `_config.py` file by alignin
 - **Destroyed Transcription Factors**: `name_of_column_with_list_of_destroyed_tfbs`
 
 **Note:** The following attributes have not yet been integrated:
+
 - **Within CGC List**
 - **Open Chromatin**
 - **Allele Frequency**
@@ -150,51 +150,102 @@ To ensure proper display of these boxes, update the `_config.py` file by alignin
 Make sure these keys correspond to your dataset to properly render the necessary information.
 
 ### `Gene`
+
 **Example**
+
 <p align="center">
    <img src="./assets/gene.png" width=90% height="auto">
 </p>
 
 **Description**
-The next selectable tab is the `Gene` tab. Here, detailed information regarding the associated gene of the SNV is listed. In particular, _interactive_ violin plots of the associated gene and its recurrent mutations (if any) are displayed here. The sample of interest is denoted in red whereas the expression of all other samples with this exact mutation are noted in black. By default, the normalized expression is plotted but this can be edited by selecting the proper expression measure (e.g. Z-score, raw, logged) in the legend on the right side. 
+The `Gene` tab offers detailed information about the gene associated with the SNV. It includes **interactive violin plots** that display gene expression across samples. The sample of interest is marked in red while other recurrent samples with the same mutation appear in black. By default, the normalized expression is shown but users can select other measures (e.g., Z-score, raw, logged) from the legend on the right.
 
-As noted previously, these plots (and all subsequent plots in other tabs) are _interactive_ meaning that the user has the ability to do things such as zoom in into specific regions through point and drag to create a box and hover over individual data points (e.g. the red data point of the sample of interest). A short 1-minute video of this can be seen below:
-
+These plots (and all subsequent visualizations) are **interactive**, enabling users to zoom into specific areas by dragging to create a selection box and hover over individual data points for more details. A brief demonstration video is available below:
 
 https://github.com/user-attachments/assets/07d8c7d2-4a21-4019-aed5-fae15564ab6e
 
-
+Below the violin plot, the **NCBI gene function** is shown if available. These descriptions were sourced from [this repository](https://github.com/nicholas-abad/ncbi_gene_names_and_descriptions) and last updated on 4 February 2025. The definitions should align with those on [GeneCards.com](GeneCards.com).
 
 **Notes About The Code**
 
 ### `Transcription Factors`
+
 **Example**
 **Description**
 **Notes About The Code**
 
 ### `IGV Genome Browser`
+
 **Example**
+
 <p align="center">
    <img src="./assets/igv_genome_browser.png" width=90% height="auto">
 </p>
 
 **Description**
+The `IGV Genome Browser` tab integrates the **Integrative Genomics Viewer (IGV)** to provide a detailed visualization of genomic regions relevant to the selected mutation. This tool allows users to explore regions of open chromatin (ChromHMM track; red), RefSeq genes (RefSeq track; blue) and NCBI reference genes (NCBI track; yellow) mapped according to the hg19 genome assembly.
+
+To easily pinpoint the mutation, click the Center Line button in the top-right corner. This will add a light gray line indicating the exact mutation position. By default, the browser displays a ±3,000 bp region around the mutation, but users can zoom in or out to adjust the view.
+
 **Notes About The Code**
+Within the Dash ID tab-igv, users can add additional publicly available tracks, including the default RefSeq track and the publicly available NCBI track, which is hosted in an AWS S3 bucket. The ChromHMM track is loaded directly from a BED file utilized in the REMIND-Cancer filtering pipeline. This file is available [here](https://raw.githubusercontent.com/nicholas-abad/REMIND-Cancer/refs/heads/main/examples/data/annotations/chromhmm.bed). Further documentation regarding IGV's implementation can be seen [here](https://dash.plotly.com/dash-bio/igv) using Dash and, in particular, the [Dash Bio](https://dash.plotly.com/dash-bio) library.
 
 ### `Deep Pileup`
+
 **Example**
+
+<p align="center">
+   <img src="./assets/deep_pileup.png" width=90% height="auto">
+</p>
 **Description**
+The `Deep Pileup` tab displays quality control plots to help with assessing the signal clarity at the specific genomic location of the selected mutation. The initial two plots are described below:
+- **Patients with a minor allele frequency greater than 25%**
+- **Patients with at least 2 variant alleles**
+
+Ideally, these plots should show no signal in control samples but a clear signal in tumor samples. Below, a good example (left) and a potential artificat (right) are shown for the ANKRD53 pSNV and NF2 pSNV:
+
+<p align="center">
+   <img src="./assets/deep_pileup_good_and_bad.png" width=90% height="auto">
+</p>
+
+These initial plots only include cohorts on the x-axis that exhibit a signal in either tumor or control samples, making visualization easier. However, the subsequent two plots display the same data across all cohorts, providing a broader perspective.
+
 **Notes About The Code**
+These plots were generated within the `./src/plots/_get_deep_pileup_plots.py` file, which generate a plot given a _Deep Pileup repository_. This repository is nothing more than a folder with genes, genomic locations and their corresponding `Overview.tsv` files. The path to this overarching repository can be changed within the `_config.py` file, particularly within the variable `PATH_TO_DEEP_PILEUP_REPOSITORY`.
+
+To generate this Deep Pileup repository / folder of overview files, the [Deep Pileup repository](https://github.com/nicholas-abad/deep-pileup-wrapper) can be used. In particular, by passing in a metadata file, which maps samples to cohorts as well as samples to the location of their BAM files, the following folder structure will be outputted:
+
+```
+deep_pileup_repository/
+├── ANKRD53/
+│   ├── chr2:71204529/
+│   │   ├── Overview.tsv
+├── TERT/
+│   ├── chr5:1295228/
+│   │   ├── Overview.tsv
+│   ├── chr5:1295250/
+│   │   ├── Overview.tsv
+├── ...
+```
 
 ### `Genome Tornado Plots`
+
 **Example**
 **Description**
 **Notes About The Code**
 
 ### `Notes`
+
 **Example**
 **Description**
+The `Notes` tab allows users, whether working individually or as part of a molecular tumor board, to take and save mutation-specific notes that remain private to each entry. Users can add multiple timestamped comments, which can be saved by clicking the Save Comment button and removed by selecting the red X next to the comment.
+
+This feature is especially useful for recording observations about a mutation’s potential significance, including factors that may warrant further investigation or functional validation in the future.
+
+Future versions of pSNV Hunter will include the ability to export notes individually, and development is currently in progress to implement this feature.
+
 **Notes About The Code**
+By default, pSNV Hunter creates a new column in the dataframe called `Notes`. If a column with the same name already exists, it may cause conflicts or unexpected behavior.
 
 ## To-do:
 
@@ -203,6 +254,8 @@ As this is still in the beta version, I've compiled a list of features that I st
 - [ ] Containerize with Docker
 - [ ] Ensure compatibility with regular VCFs
 - [ ] Properly implement the `Interesting` column
+- [ ] Ensure that the `Notes` are saved with the ability to export.
+- [ ] Make it available on PyPi
 
 ## Additional Information:
 
