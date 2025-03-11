@@ -1,6 +1,8 @@
 <h1 align="center">pSNV Hunter</h1>
 
-![GitHub last commit](https://img.shields.io/github/last-commit/nicholas-abad/psnv-hunter) ![Github Primarily Language](https://img.shields.io/badge/language-python-yellow) ![Github Number of Dependencies](https://img.shields.io/badge/number_of_dependencies-122-blue) ![GitHub repo size](https://img.shields.io/github/repo-size/nicholas-abad/psnv-hunter) 
+![GitHub Release](https://img.shields.io/github/v/release/nicholas-abad/psnv-hunter?include_prereleases) ![GitHub last commit](https://img.shields.io/github/last-commit/nicholas-abad/psnv-hunter) ![GitHub top language](https://img.shields.io/github/languages/top/nicholas-abad/psnv-hunter) ![Github Number of Dependencies](https://img.shields.io/badge/number_of_dependencies-122-blue) ![GitHub repo size](https://img.shields.io/github/repo-size/nicholas-abad/psnv-hunter) ![Docker Pulls](https://img.shields.io/docker/pulls/nicholasabad/psnv-hunter)
+
+
 
 <h4>Created by Nicholas Abad<sup>1,2,</sup>, Cindy Körner<sup>3</sup> and Lars Feuerbach<sup>1</sup></h4>
 
@@ -9,6 +11,7 @@
 <html><sup>2</sup></html> Faculty of Engineering (Molecular Biotechnology) at Heidelberg University
 <br>
 <html><sup>3</sup></html> Division of Molecular Genome Analysis at the German Cancer Research Center (DKFZ)
+<br>
 
 ![Github Number of Dependencies](https://img.shields.io/badge/repository_maintainer-nicholas_abad_(nicholas.a.abad@gmail.com)-lightgreen)
 
