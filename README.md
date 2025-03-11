@@ -169,12 +169,24 @@ https://github.com/user-attachments/assets/07d8c7d2-4a21-4019-aed5-fae15564ab6e
 Below the violin plot, the **NCBI gene function** is shown if available. These descriptions were sourced from [this repository](https://github.com/nicholas-abad/ncbi_gene_names_and_descriptions) and last updated on 4 February 2025. The definitions should align with those on [GeneCards.com](GeneCards.com).
 
 **Notes About The Code**
+Placeholder.
 
 ### `Transcription Factors`
 
 **Example**
 **Description**
+Within the `Transcription Factors` tab, a secondary set of tabs pop up that represents both the created (green) and destroyed (red) TFBS'.
+
+Utilizing the Find Individual Motif Occurrences (FIMO) tool from the MEME Suite toolkit along with the JASPAR2020 database of curated transcription factors, the hg19 reference DNA sequence of +/-10 bp around every pSNV underwent scanning by FIMO against every TF motif in JASPAR2020. Using the positional weight matrix of the TF and its associated sequence context, FIMO calculated a statistical binding affinity score, which indicates the likelihood of observing the specific motif. To assess the impact of a mutation, the ratio (denoted as S(TFBS)) between the binding affinity scores for the mutant over the wild type allele was calculated as a quantitative measure indicating the impact of mutations on the binding motif of TFs. Motifs with S(TFBS)>11 were defined as a created TFBS motif and S(TFBS)<0.09 as a destroyed TFBS motif. 
+
+By selecting one of the created or destroyed tabs, the known gene function (similar to the `Gene` tab) is displayed alongside the expression values of the associated transcription factor. By default, the raw expression values serve as a proxy for TF activity, but users can switch to Z-score or logged expression using the options on the right side of the violin plot.
+
+Below the plots are two pieces of information: the JASPAR2022 sequence logo plot and the actual sequence surrounding the mutation (i.e. sequence context). To verify that the sequence context aligns with the known motif, users can drag the actual sequence on the right to align it with the sequence logo on the left. Ideally, a perfect match should be observed for a created or destroyed TFBS.
+
+For the sequence logo plot, clicking the left or right arrows toggles between the reverse complement and the original sequence logo.
+
 **Notes About The Code**
+Placeholder.
 
 ### `IGV Genome Browser`
 
@@ -202,6 +214,7 @@ Within the Dash ID tab-igv, users can add additional publicly available tracks, 
 
 **Description**
 The `Deep Pileup` tab displays quality control plots to help with assessing the signal clarity at the specific genomic location of the selected mutation. The initial two plots are described below:
+
 - **Patients with a minor allele frequency greater than 25%**
 - **Patients with at least 2 variant alleles**
 
@@ -232,16 +245,25 @@ deep_pileup_repository/
 ```
 
 ### `Genome Tornado Plots`
+
 **Example**
+
+<p align="center">
+   <img src="./assets/genome_tornado_plots.png" width=100% height="auto">
+</p>
+
 **Description**
-The `Genome Tornado Plots` tab gives users an overview of the dataset-wide focal deletions and amplifications relative to the PCAWG dataset. As a copy number increase may cause an increase in expression, these plots give a hint towards convergent tumor evolution in the sense that to achieve the same result, a number of genomic events could occur.
+The `Genome Tornado Plots` tab provides an overview of dataset-wide focal deletions and amplifications in comparison to the PCAWG dataset. Since an increase in copy number can lead to higher gene expression, these plots offer insights into convergent tumor evolution, illustrating how different genomic events may drive similar biological outcomes.
 
 **Notes About The Code**
 The code display plots that have been previously-generated using the [Genome Tornado Plots Wrapper repository](https://github.com/nicholas-abad/genome-tornado-plot-wrapper). This wrapper script was initially created to easily flow into the REMIND-Cancer filtering pipeline as well as pSNV Hunter. Please refer to the [original Genome Tornado Plots repository](https://github.com/chenhong-dkfz/GenomeTornadoPlot) as well as the corresponding [paper](https://academic.oup.com/bioinformatics/article/38/7/2036/6517781).
 
 ### `Notes`
-
 **Example**
+<p align="center">
+   <img src="./assets/notes.png" width=80% height="auto">
+</p>
+
 **Description**
 The `Notes` tab allows users, whether working individually or as part of a molecular tumor board, to take and save mutation-specific notes that remain private to each entry. Users can add multiple timestamped comments, which can be saved by clicking the Save Comment button and removed by selecting the red X next to the comment.
 
