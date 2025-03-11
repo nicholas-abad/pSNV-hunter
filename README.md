@@ -158,7 +158,10 @@ The next selectable tab is the `Gene` tab. Here, detailed information regarding 
 
 As noted previously, these plots (and all subsequent plots in other tabs) are _interactive_ meaning that the user has the ability to do things such as zoom in into specific regions through point and drag to create a box and hover over individual data points (e.g. the red data point of the sample of interest). A short 1-minute video of this can be seen below:
 
-[![Watch the video](./assets/gene.png)](./assets/movies/gene_tab_example.mov)
+[![Watch the video](./assets/gene.png)](./assets/movies/gene_tab_example.mp4)
+
+
+<video src="./assets/movies/gene_tab_example.mp4"/>
 
 **Notes About The Code**
 - 
