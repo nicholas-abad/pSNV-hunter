@@ -2,7 +2,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/nicholas-abad/psnv-hunter) ![Github Primarily Language](https://img.shields.io/badge/language-python-yellow) ![Github Number of Dependencies](https://img.shields.io/badge/number_of_dependencies-122-blue) ![GitHub repo size](https://img.shields.io/github/repo-size/nicholas-abad/psnv-hunter)
 
-<h4>Created by Nicholas Abad<sup>1,2,</sup>, Cindy Körner<sup>3</sup> and Lars Feuerbach<sup>1</sup></h3>
+<h4>Created by Nicholas Abad<sup>1,2,</sup>, Cindy Körner<sup>3</sup> and Lars Feuerbach<sup>1</sup></h4>
 
 <html><sup>1</sup></html> Division of Applied Bioinformatics at the German Cancer Research Center (DKFZ)
 <br>
@@ -118,9 +118,11 @@ In short, the seven different selectable tabs can be summarized here:
 ## Exploring the Seven Analysis Tabs
 
 ### `Patient Info`
-
+**Example**
+<p align="center">
+   <img src="./assets/patient_info.png" width=90% height=90%>
+</p>
 **Description**
-
 The `Patient Info` tab is by default the first tab chosen when selecting an individual mutation to analyze. Here, the name of the gene that the pSNV is associated with, which in this example is _ANKRD53_, is shown at the top as well as the mutations nucleotide change (e.g. G to A), the chromosomal location and the strand the SNV was found in.
 
 Furthermore, the eight boxes represent key mutational details. First, _Recurrence Mutations_ refers to the number of occurrences of the mutation at this genomic location in other samples, which has been used in identifying functional pSNVs such as within the promoter of _TERT_. Secondly, the raw and Z-score normalized expression values can be seen here. Within the REMIND-Cancer pipeline, normalization was relative to only those samples within the cohort.
@@ -129,26 +131,37 @@ Next, the presence of this mutation within the Cancer Gene Census (CGC) database
 
 The last two boxes contain information regarding the predicted created and destroyed TFBS' according to JASPAR2022. Here, a TFBS is predicted to be created if it's binding affinity is greater than or equal to 11 whereas it's predicted to be destroyed if it's less than or equal to 0.09.
 
-**Example**
-<p align="center">
-   <img src="./assets/patient_info.png" width=90% height=90%>
-</p>
-
 **Notes About The Code**
+To ensure proper display of these boxes, update the `_config.py` file by aligning the dictionary keys in `DATAFRAME_SETTINGS` with your dataset's column names:
 
-In order for these boxes to properly be displayed, the _config.py file can be edited such that the names of the columns in your dataset match.
+- **Recurrence Mutations**: `name_of_paths_with_recurrence_column`
+- **Gene Expression**: `name_of_expression_column`, `name_of_normalized_expression_column`
+- **Created Transcription Factors**: `name_of_column_with_list_of_created_tfbs`
+- **Destroyed Transcription Factors**: `name_of_column_with_list_of_destroyed_tfbs`
 
-Edit the keys within the variable DATAFRAME_SETTINGS in order to properly match your dataset. Below are the keys that correspond to how the boxes are created within the code:
-1. Recurrence Mutations: name_of_paths_with_recurrence_column
-2. Gene Expression: name_of_expression_column AND name_of_normalized_expression_column
-3. Within CGC List: (not incorporated yet)
-4. Open Chromatin: (not incorporated yet)
-5. Allele Frequency: (not incorporated yet)
-6. CpG Island: (not incorporated yet)
-7. Created Transcription Factors: name_of_column_with_list_of_created_tfbs
-8. Destroyed Transcription Factors: name_of_column_with_list_of_destroyed_tfbs
+**Note:** The following attributes have not yet been integrated:
+- **Within CGC List**
+- **Open Chromatin**
+- **Allele Frequency**
+- **CpG Island**
+
+Make sure these keys correspond to your dataset to properly render the necessary information.
 
 ### `Gene`
+**Example**
+<p align="center">
+   <img src="./assets/gene.png" width=90% height="auto">
+</p>
+
+**Description**
+The next selectable tab is the `Gene` tab. Here, detailed information regarding the associated gene of the SNV is listed. In particular, _interactive_ violin plots of the associated gene and its recurrent mutations (if any) are displayed here. The sample of interest is denoted in red whereas the expression of all other samples with this exact mutation are noted in black. By default, the normalized expression is plotted but this can be edited by selecting the proper expression measure (e.g. Z-score, raw, logged) in the legend on the right side. 
+
+As noted previously, these plots (and all subsequent plots in other tabs) are _interactive_ meaning that the user has the ability to do things such as zoom in into specific regions through point and drag to create a box and hover over individual data points (e.g. the red data point of the sample of interest). A short 1-minute video of this can be seen below:
+
+[![Watch the video](./assets/gene.png)](./assets/movies/gene_tab_example.mov)
+
+**Notes About The Code**
+- 
 
 ### `Transcription Factors`
 
