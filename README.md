@@ -122,6 +122,7 @@ In short, the seven different selectable tabs can be summarized here:
 <p align="center">
    <img src="./assets/patient_info.png" width=90% height=90%>
 </p>
+
 **Description**
 The `Patient Info` tab is by default the first tab chosen when selecting an individual mutation to analyze. Here, the name of the gene that the pSNV is associated with, which in this example is _ANKRD53_, is shown at the top as well as the mutations nucleotide change (e.g. G to A), the chromosomal location and the strand the SNV was found in.
 
@@ -164,17 +165,35 @@ https://github.com/user-attachments/assets/07d8c7d2-4a21-4019-aed5-fae15564ab6e
 
 
 **Notes About The Code**
-- 
 
 ### `Transcription Factors`
+**Example**
+**Description**
+**Notes About The Code**
 
 ### `IGV Genome Browser`
+**Example**
+<p align="center">
+   <img src="./assets/igv_genome_browser.png" width=90% height="auto">
+</p>
+
+**Description**
+**Notes About The Code**
 
 ### `Deep Pileup`
+**Example**
+**Description**
+**Notes About The Code**
 
 ### `Genome Tornado Plots`
+**Example**
+**Description**
+**Notes About The Code**
 
 ### `Notes`
+**Example**
+**Description**
+**Notes About The Code**
 
 ## To-do:
 
