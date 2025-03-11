@@ -10,6 +10,8 @@
 <br>
 <html><sup>3</sup></html> Division of Molecular Genome Analysis at the German Cancer Research Center (DKFZ)
 
+![Github Number of Dependencies](https://img.shields.io/badge/repository_maintainer-nicholas_abad_(nicholas.a.abad@gmail.com)-lightgreen)
+
 ***Promoter SNV (pSNV) Hunter*** is a comprehensive data aggregation and visualization tool particularly used to identify functional promoter SNVs within the [REMIND-Cancer project](https://github.com/nicholas-abad/REMIND-Cancer).
 
 Currently, pSNV Hunter is within a closed beta form. However, if you'd like access, please contact Nicholas Abad at nicholas.a.abad@gmail.com.
@@ -197,6 +199,7 @@ Within the Dash ID tab-igv, users can add additional publicly available tracks, 
 <p align="center">
    <img src="./assets/deep_pileup.png" width=90% height="auto">
 </p>
+
 **Description**
 The `Deep Pileup` tab displays quality control plots to help with assessing the signal clarity at the specific genomic location of the selected mutation. The initial two plots are described below:
 - **Patients with a minor allele frequency greater than 25%**
@@ -229,10 +232,12 @@ deep_pileup_repository/
 ```
 
 ### `Genome Tornado Plots`
-
 **Example**
 **Description**
+The `Genome Tornado Plots` tab gives users an overview of the dataset-wide focal deletions and amplifications relative to the PCAWG dataset. As a copy number increase may cause an increase in expression, these plots give a hint towards convergent tumor evolution in the sense that to achieve the same result, a number of genomic events could occur.
+
 **Notes About The Code**
+The code display plots that have been previously-generated using the [Genome Tornado Plots Wrapper repository](https://github.com/nicholas-abad/genome-tornado-plot-wrapper). This wrapper script was initially created to easily flow into the REMIND-Cancer filtering pipeline as well as pSNV Hunter. Please refer to the [original Genome Tornado Plots repository](https://github.com/chenhong-dkfz/GenomeTornadoPlot) as well as the corresponding [paper](https://academic.oup.com/bioinformatics/article/38/7/2036/6517781).
 
 ### `Notes`
 
