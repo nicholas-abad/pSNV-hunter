@@ -24,6 +24,8 @@ Currently, pSNV Hunter is within a closed beta form. However, if you'd like acce
 
 ## Run pSNV Hunter
 
+### Option 1: Locally
+
 1. Clone the repository.
    ```
    git clone https://github.com/nicholas-abad/pSNV-hunter.git
@@ -51,6 +53,15 @@ By default, pSNV Hunter will be running locally at the location listed, which by
 </p>
 
 7. When you're done using **_pSNV Hunter_**, make sure to stop it from running in the command line by pressing `Ctrl + c`.
+
+
+### Option 2: Run with Docker
+1. Pull the latest image
+   ```docker pull nicholasabad/psnv-hunter:beta_0.1```
+2. Run while exposing port 8050
+   ```docker run -p 8050:8050 nicholasabad/psnv-hunter:beta_0.1```
+3. Navigate to localhost:8050 in your browser.
+
 
 ## Tutorial
 
