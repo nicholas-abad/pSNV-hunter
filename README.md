@@ -1,6 +1,8 @@
 <h1 align="center">pSNV Hunter</h1>
 
-![Github Primarily Language](https://img.shields.io/badge/version-closed_beta-red) ![GitHub last commit](https://img.shields.io/github/last-commit/nicholas-abad/psnv-hunter) ![Github Primarily Language](https://img.shields.io/badge/language-python-yellow) ![Github Number of Dependencies](https://img.shields.io/badge/number_of_dependencies-122-blue) ![GitHub repo size](https://img.shields.io/github/repo-size/nicholas-abad/psnv-hunter)
+![GitHub Release](https://img.shields.io/github/v/release/nicholas-abad/psnv-hunter?include_prereleases) ![GitHub last commit](https://img.shields.io/github/last-commit/nicholas-abad/psnv-hunter) ![GitHub top language](https://img.shields.io/github/languages/top/nicholas-abad/psnv-hunter) ![Github Number of Dependencies](https://img.shields.io/badge/number_of_dependencies-122-blue) ![GitHub repo size](https://img.shields.io/github/repo-size/nicholas-abad/psnv-hunter) ![Docker Pulls](https://img.shields.io/docker/pulls/nicholasabad/psnv-hunter)
+
+
 
 <h4>Created by Nicholas Abad<sup>1,2,</sup>, Cindy Körner<sup>3</sup> and Lars Feuerbach<sup>1</sup></h4>
 
@@ -9,12 +11,11 @@
 <html><sup>2</sup></html> Faculty of Engineering (Molecular Biotechnology) at Heidelberg University
 <br>
 <html><sup>3</sup></html> Division of Molecular Genome Analysis at the German Cancer Research Center (DKFZ)
+<br>
 
 ![Github Number of Dependencies](https://img.shields.io/badge/repository_maintainer-nicholas_abad_(nicholas.a.abad@gmail.com)-lightgreen)
 
 ***Promoter SNV (pSNV) Hunter*** is a comprehensive data aggregation and visualization tool particularly used to identify functional promoter SNVs within the [REMIND-Cancer project](https://github.com/nicholas-abad/REMIND-Cancer).
-
-Currently, pSNV Hunter is within a closed beta form. However, if you'd like access, please contact Nicholas Abad at nicholas.a.abad@gmail.com.
 
 <p align="center">
    <img src="./assets/pSNV_Hunter.png" width=70% height=70%>
@@ -23,6 +24,8 @@ Currently, pSNV Hunter is within a closed beta form. However, if you'd like acce
 ---
 
 ## Run pSNV Hunter
+
+### Option 1: Locally
 
 1. Clone the repository.
    ```
@@ -51,6 +54,19 @@ By default, pSNV Hunter will be running locally at the location listed, which by
 </p>
 
 7. When you're done using **_pSNV Hunter_**, make sure to stop it from running in the command line by pressing `Ctrl + c`.
+
+
+### Option 2: Run with Docker
+1. Pull the latest image
+   ```
+   docker pull nicholasabad/psnv-hunter:beta_0.1
+   ```
+3. Run while exposing port 8050
+   ```
+   docker run -p 8050:8050 nicholasabad/psnv-hunter:beta_0.1
+   ```
+5. Navigate to localhost:8050 in your browser.
+
 
 ## Tutorial
 
