@@ -17,9 +17,7 @@
 
 ***Promoter SNV (pSNV) Hunter*** is a comprehensive data aggregation and visualization tool particularly used to identify functional promoter SNVs within the [REMIND-Cancer project](https://github.com/nicholas-abad/REMIND-Cancer).
 
-<p align="center">
-   <img src="./assets/pSNV_Hunter.png" width=70% height=70%>
-</p>
+![](./assets/pSNV_Hunter.png)
 
 ---
 
@@ -41,17 +39,13 @@
    ```
 4. The prior Python command should output the following:
 
-<p align="center">
-   <img src="./assets/run_visualization_tool.png">
-</p>
+![](./assets/run_visualization_tool.png)
 
 By default, pSNV Hunter will be running locally at the location listed, which by default and in this case is [http://127.0.0.1:8050](http://127.0.0.1:8050) or [localhost:8050](localhost:8050).
 
 6. You can either click the link if it’s clickable or open a browser and manually type the full link into the address bar. An example can be seen below:
 
-<p align="center">
-   <img src="./assets/browser.png" width=60% height="auto">
-</p>
+![](./assets/browser.png)
 
 7. When you're done using **_pSNV Hunter_**, make sure to stop it from running in the command line by pressing `Ctrl + c`.
 
@@ -78,9 +72,7 @@ You can load two example datasets included in the repository by clicking the `Lo
 
 Once files are loaded in, basic details such as the filename, the number of rows and the number of columns can be seen. To proceed, click on the `Go to File Viewer` button [Step 2].
 
-<p align="center">
-   <img src="./assets/loading_in_data.png">
-</p>
+![](./assets/loading_in_data.png)
 
 #### Choose the dataset to analyze
 
@@ -88,23 +80,17 @@ A window will appear on the left, displaying the uploaded file names along with 
 
 If you need to go back to the file uploader page, click the red `Return to File Uploader` button at the bottom left.
 
-<p align="center">
-   <img src="./assets/choosing_dataset.png" width=80% height="auto">
-</p>
+![](./assets/choosing_dataset.png)
 
 #### Filter, sort, and download the table
 
 The file you selected will now be displayed in a table-like format as seen below. Conversely, to switch between the uploaded files click on the `View Uploaded Files` button.
 
-<p align="center">
-   <img src="./assets/filtering_sorting_downloading.png">
-</p>
+![](./assets/filtering_sorting_downloading.png)
 
 Using this table, you can filter, sort, and download the dataset. The example below demonstrates how to: (1) filter by a specific string column (e.g., GENE), (2) filter a numerical column (e.g., score) using mathematical expressions, (3) sort the table by a numerical column, and (4) download the filtered dataset.
 
-<p align="center">
-   <img src="./assets/vertical_filtering_sorting_downloading.png" width=70% height="auto">
-</p>
+![](./assets/vertical_filtering_sorting_downloading.png)
 <br>
 
 #### Selecting a mutation
@@ -113,9 +99,7 @@ To view detailed information about an individual, sample-specific mutation, clic
 
 After selecting a mutation, you can explore various tabs [Step 2] to view information and graphs related to the chosen mutation.
 
-<p align="center">
-   <img src="./assets/selecting_a_mutation.png" width=70% height="auto">
-</p>
+![](./assets/selecting_a_mutation.png)
 
 In short, the seven different selectable tabs can be summarized here:
 
@@ -133,9 +117,7 @@ In short, the seven different selectable tabs can be summarized here:
 
 **Example**
 
-<p align="center">
-   <img src="./assets/patient_info.png" width=90% height=90%>
-</p>
+![](./assets/patient_info.png)
 
 **Description**
 The `Patient Info` tab is by default the first tab chosen when selecting an individual mutation to analyze. Here, the name of the gene that the pSNV is associated with, which in this example is _ANKRD53_, is shown at the top as well as the mutations nucleotide change (e.g. G to A), the chromosomal location and the strand the SNV was found in.
@@ -167,9 +149,7 @@ Make sure these keys correspond to your dataset to properly render the necessary
 
 **Example**
 
-<p align="center">
-   <img src="./assets/gene.png" width=90% height="auto">
-</p>
+![](./assets/gene.png)
 
 **Description**
 The `Gene` tab offers detailed information about the gene associated with the SNV. It includes **interactive violin plots** that display gene expression across samples. The sample of interest is marked in red while other recurrent samples with the same mutation appear in black. By default, the normalized expression is shown but users can select other measures (e.g., Z-score, raw, logged) from the legend on the right.
@@ -204,9 +184,7 @@ Placeholder.
 
 **Example**
 
-<p align="center">
-   <img src="./assets/igv_genome_browser.png" width=90% height="auto">
-</p>
+![](./assets/igv_genome_browser.png)
 
 **Description**
 The `IGV Genome Browser` tab integrates the **Integrative Genomics Viewer (IGV)** to provide a detailed visualization of genomic regions relevant to the selected mutation. This tool allows users to explore regions of open chromatin (ChromHMM track; red), RefSeq genes (RefSeq track; blue) and NCBI reference genes (NCBI track; yellow) mapped according to the hg19 genome assembly.
@@ -220,9 +198,7 @@ Within the Dash ID tab-igv, users can add additional publicly available tracks, 
 
 **Example**
 
-<p align="center">
-   <img src="./assets/deep_pileup.png" width=90% height="auto">
-</p>
+![](./assets/deep_pileup.png)
 
 **Description**
 The `Deep Pileup` tab displays quality control plots to help with assessing the signal clarity at the specific genomic location of the selected mutation. The initial two plots are described below:
@@ -232,9 +208,7 @@ The `Deep Pileup` tab displays quality control plots to help with assessing the 
 
 Ideally, these plots should show no signal in control samples but a clear signal in tumor samples. Below, a good example (left) and a potential artificat (right) are shown for the ANKRD53 pSNV and NF2 pSNV:
 
-<p align="center">
-   <img src="./assets/deep_pileup_good_and_bad.png" width=90% height="auto">
-</p>
+![](./assets/deep_pileup_good_and_bad.png)
 
 These initial plots only include cohorts on the x-axis that exhibit a signal in either tumor or control samples, making visualization easier. However, the subsequent two plots display the same data across all cohorts, providing a broader perspective.
 
@@ -260,9 +234,7 @@ deep_pileup_repository/
 
 **Example**
 
-<p align="center">
-   <img src="./assets/genome_tornado_plots.png" width=100% height="auto">
-</p>
+![](./assets/genome_tornado_plots.png)
 
 **Description**
 The `Genome Tornado Plots` tab provides an overview of dataset-wide focal deletions and amplifications in comparison to the PCAWG dataset. Since an increase in copy number can lead to higher gene expression, these plots offer insights into convergent tumor evolution, illustrating how different genomic events may drive similar biological outcomes.
@@ -272,9 +244,7 @@ The code display plots that have been previously-generated using the [Genome Tor
 
 ### `Notes`
 **Example**
-<p align="center">
-   <img src="./assets/notes.png" width=80% height="auto">
-</p>
+![](./assets/notes.png)
 
 **Description**
 The `Notes` tab allows users, whether working individually or as part of a molecular tumor board, to take and save mutation-specific notes that remain private to each entry. Users can add multiple timestamped comments, which can be saved by clicking the Save Comment button and removed by selecting the red X next to the comment.
