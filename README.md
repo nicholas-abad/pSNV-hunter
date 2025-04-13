@@ -1,4 +1,4 @@
-<h1 align="center">pSNV Hunter</h1>
+# pSNV Hunter
 
 ![GitHub Release](https://img.shields.io/github/v/release/nicholas-abad/psnv-hunter?include_prereleases) ![GitHub last commit](https://img.shields.io/github/last-commit/nicholas-abad/psnv-hunter) ![GitHub top language](https://img.shields.io/github/languages/top/nicholas-abad/psnv-hunter) ![Github Number of Dependencies](https://img.shields.io/badge/number_of_dependencies-122-blue) ![GitHub repo size](https://img.shields.io/github/repo-size/nicholas-abad/psnv-hunter) ![Docker Pulls](https://img.shields.io/docker/pulls/nicholasabad/psnv-hunter)
 
