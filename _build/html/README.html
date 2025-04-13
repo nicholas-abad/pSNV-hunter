@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Run pSNV Hunter &mdash; pSNV-Hunter Beta 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8777d9ad"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="pSNV-Hunter documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pSNV-Hunter
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Run pSNV Hunter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#option-1-locally">Option 1: Locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#option-2-run-with-docker">Option 2: Run with Docker</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#tutorial">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#loading-in-two-example-datasets">Loading in two example datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#choose-the-dataset-to-analyze">Choose the dataset to analyze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filter-sort-and-download-the-table">Filter, sort, and download the table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#selecting-a-mutation">Selecting a mutation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#exploring-the-seven-analysis-tabs">Exploring the Seven Analysis Tabs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#patient-info"><code class="docutils literal notranslate"><span class="pre">Patient</span> <span class="pre">Info</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gene"><code class="docutils literal notranslate"><span class="pre">Gene</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transcription-factors"><code class="docutils literal notranslate"><span class="pre">Transcription</span> <span class="pre">Factors</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#igv-genome-browser"><code class="docutils literal notranslate"><span class="pre">IGV</span> <span class="pre">Genome</span> <span class="pre">Browser</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deep-pileup"><code class="docutils literal notranslate"><span class="pre">Deep</span> <span class="pre">Pileup</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#genome-tornado-plots"><code class="docutils literal notranslate"><span class="pre">Genome</span> <span class="pre">Tornado</span> <span class="pre">Plots</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes"><code class="docutils literal notranslate"><span class="pre">Notes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#to-do">To-do:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#additional-information">Additional Information:</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pSNV-Hunter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Run pSNV Hunter</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/README.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1 align="center">pSNV Hunter</h1>
+<p><img alt="GitHub Release" src="https://img.shields.io/github/v/release/nicholas-abad/psnv-hunter?include_prereleases" /> <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/nicholas-abad/psnv-hunter" /> <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/nicholas-abad/psnv-hunter" /> <img alt="Github Number of Dependencies" src="https://img.shields.io/badge/number_of_dependencies-122-blue" /> <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/nicholas-abad/psnv-hunter" /> <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/nicholasabad/psnv-hunter" /></p>
+<h4>Created by Nicholas Abad<sup>1,2,</sup>, Cindy Körner<sup>3</sup> and Lars Feuerbach<sup>1</sup></h4>
+<html><sup>1</sup></html> Division of Applied Bioinformatics at the German Cancer Research Center (DKFZ)
+<br>
+<html><sup>2</sup></html> Faculty of Engineering (Molecular Biotechnology) at Heidelberg University
+<br>
+<html><sup>3</sup></html> Division of Molecular Genome Analysis at the German Cancer Research Center (DKFZ)
+<br>
+<p><img alt="Github Number of Dependencies" src="https://img.shields.io/badge/repository_maintainer-nicholas_abad_(nicholas.a.abad&#64;gmail.com)-lightgreen" /></p>
+<p><em><strong>Promoter SNV (pSNV) Hunter</strong></em> is a comprehensive data aggregation and visualization tool particularly used to identify functional promoter SNVs within the <a class="reference external" href="https://github.com/nicholas-abad/REMIND-Cancer">REMIND-Cancer project</a>.</p>
+<p align="center">
+   <img src="./assets/pSNV_Hunter.png" width=70% height=70%>
+</p>
+<hr class="docutils" />
+<section id="run-psnv-hunter">
+<h1>Run pSNV Hunter<a class="headerlink" href="#run-psnv-hunter" title="Link to this heading"></a></h1>
+<section id="option-1-locally">
+<h2>Option 1: Locally<a class="headerlink" href="#option-1-locally" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Clone the repository.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">nicholas</span><span class="o">-</span><span class="n">abad</span><span class="o">/</span><span class="n">pSNV</span><span class="o">-</span><span class="n">hunter</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+<li><p>Download the necessary Python packages using pip.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run pSNV Hunter</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">src</span><span class="o">/</span><span class="n">run_visualization_tool</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</li>
+<li><p>The prior Python command should output the following:</p></li>
+</ol>
+<p align="center">
+   <img src="./assets/run_visualization_tool.png">
+</p>
+<p>By default, pSNV Hunter will be running locally at the location listed, which by default and in this case is <a class="reference external" href="http://127.0.0.1:8050">http://127.0.0.1:8050</a> or <a class="reference internal" href="#localhost:8050"><span class="xref myst">localhost:8050</span></a>.</p>
+<ol class="arabic simple" start="6">
+<li><p>You can either click the link if it’s clickable or open a browser and manually type the full link into the address bar. An example can be seen below:</p></li>
+</ol>
+<p align="center">
+   <img src="./assets/browser.png" width=60% height="auto">
+</p>
+<ol class="arabic simple" start="7">
+<li><p>When you’re done using <strong><em>pSNV Hunter</em></strong>, make sure to stop it from running in the command line by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">c</span></code>.</p></li>
+</ol>
+</section>
+<section id="option-2-run-with-docker">
+<h2>Option 2: Run with Docker<a class="headerlink" href="#option-2-run-with-docker" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Pull the latest image</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">nicholasabad</span><span class="o">/</span><span class="n">psnv</span><span class="o">-</span><span class="n">hunter</span><span class="p">:</span><span class="n">beta_0</span><span class="mf">.1</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run while exposing port 8050</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8050</span><span class="p">:</span><span class="mi">8050</span> <span class="n">nicholasabad</span><span class="o">/</span><span class="n">psnv</span><span class="o">-</span><span class="n">hunter</span><span class="p">:</span><span class="n">beta_0</span><span class="mf">.1</span>
+</pre></div>
+</div>
+</li>
+<li><p>Navigate to localhost:8050 in your browser.</p></li>
+</ol>
+</section>
+</section>
+<section id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Link to this heading"></a></h1>
+<p>This section will outline the main features of pSNV-Hunter and how to use it. As a reminder, the main goal of <strong><em>pSNV Hunter</em></strong> is to individually analyze mutations, particularly SNVs within the promoter that have passed the REMIND-Cancer pipeline.</p>
+<section id="loading-in-two-example-datasets">
+<h2>Loading in two example datasets<a class="headerlink" href="#loading-in-two-example-datasets" title="Link to this heading"></a></h2>
+<p>You can load two example datasets included in the repository by clicking the <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Example</span> <span class="pre">Files</span></code> button [Step 1]. Conversely, if you wanted to input your own .vcf files, you can load them by clicking on the <code class="docutils literal notranslate"><span class="pre">Drop</span> <span class="pre">and</span> <span class="pre">Drag</span> <span class="pre">or</span> <span class="pre">Select</span> <span class="pre">Files</span></code> button above it.</p>
+<p>Once files are loaded in, basic details such as the filename, the number of rows and the number of columns can be seen. To proceed, click on the <code class="docutils literal notranslate"><span class="pre">Go</span> <span class="pre">to</span> <span class="pre">File</span> <span class="pre">Viewer</span></code> button [Step 2].</p>
+<p align="center">
+   <img src="./assets/loading_in_data.png">
+</p>
+</section>
+<section id="choose-the-dataset-to-analyze">
+<h2>Choose the dataset to analyze<a class="headerlink" href="#choose-the-dataset-to-analyze" title="Link to this heading"></a></h2>
+<p>A window will appear on the left, displaying the uploaded file names along with <code class="docutils literal notranslate"><span class="pre">Interesting</span> <span class="pre">Mutations</span></code>. To switch between files, simply click on the desired file [Step 1] and then press <code class="docutils literal notranslate"><span class="pre">Okay</span></code> [Step 2]. The selected file name will be displayed above the file list.</p>
+<p>If you need to go back to the file uploader page, click the red <code class="docutils literal notranslate"><span class="pre">Return</span> <span class="pre">to</span> <span class="pre">File</span> <span class="pre">Uploader</span></code> button at the bottom left.</p>
+<p align="center">
+   <img src="./assets/choosing_dataset.png" width=80% height="auto">
+</p>
+</section>
+<section id="filter-sort-and-download-the-table">
+<h2>Filter, sort, and download the table<a class="headerlink" href="#filter-sort-and-download-the-table" title="Link to this heading"></a></h2>
+<p>The file you selected will now be displayed in a table-like format as seen below. Conversely, to switch between the uploaded files click on the <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">Uploaded</span> <span class="pre">Files</span></code> button.</p>
+<p align="center">
+   <img src="./assets/filtering_sorting_downloading.png">
+</p>
+<p>Using this table, you can filter, sort, and download the dataset. The example below demonstrates how to: (1) filter by a specific string column (e.g., GENE), (2) filter a numerical column (e.g., score) using mathematical expressions, (3) sort the table by a numerical column, and (4) download the filtered dataset.</p>
+<p align="center">
+   <img src="./assets/vertical_filtering_sorting_downloading.png" width=70% height="auto">
+</p>
+<br>
+</section>
+<section id="selecting-a-mutation">
+<h2>Selecting a mutation<a class="headerlink" href="#selecting-a-mutation" title="Link to this heading"></a></h2>
+<p>To view detailed information about an individual, sample-specific mutation, click the blue button to the left of the mutation of interest within the table [Step 1].</p>
+<p>After selecting a mutation, you can explore various tabs [Step 2] to view information and graphs related to the chosen mutation.</p>
+<p align="center">
+   <img src="./assets/selecting_a_mutation.png" width=70% height="auto">
+</p>
+<p>In short, the seven different selectable tabs can be summarized here:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Patient</span> <span class="pre">Info</span></code></strong>: Key details about the mutation, including the number of recurrent mutations, raw and normalized expression values, whether it is classified as a known cancer gene (i.e., listed in the Cancer Gene Census), its presence in a region of open chromatin, allele frequency, CpG island status, and any transcription factor binding sites (TFBSs) that are created or disrupted.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Gene</span></code></strong>: This tab provides information on the gene linked to the SNV, including its expression levels and functional details sourced from NCBI.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Transcription</span> <span class="pre">Factors</span></code></strong>: Displays expression levels of transcription factor binding sites (TFBS) predicted to be created or disrupted, along with their associated functions. Additionally, JASPAR2022 sequence logo plots for the TFBS are available.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">IGV</span> <span class="pre">Genome</span> <span class="pre">Browser</span></code></strong>: Integrates the IGV genome browser with the NCBI HG19 genome track and ChromHMM-derived regions of open chromatin for in-depth visualization.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Deep</span> <span class="pre">Pileup</span></code></strong>: Presents multiple quality control plots from DeepPileup to assess the signal clarity at the genomic location in question.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Genome</span> <span class="pre">Tornado</span> <span class="pre">Plots</span></code></strong>: Displays focal copy number alterations (e.g., amplifications and deletions) in the context of the entire PCAWG dataset.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Notes</span></code></strong>: Allows users to take, save, and export notes related to individual mutations for reference.</p></li>
+</ul>
+</section>
+</section>
+<section id="exploring-the-seven-analysis-tabs">
+<h1>Exploring the Seven Analysis Tabs<a class="headerlink" href="#exploring-the-seven-analysis-tabs" title="Link to this heading"></a></h1>
+<section id="patient-info">
+<h2><code class="docutils literal notranslate"><span class="pre">Patient</span> <span class="pre">Info</span></code><a class="headerlink" href="#patient-info" title="Link to this heading"></a></h2>
+<p><strong>Example</strong></p>
+<p align="center">
+   <img src="./assets/patient_info.png" width=90% height=90%>
+</p>
+<p><strong>Description</strong>
+The <code class="docutils literal notranslate"><span class="pre">Patient</span> <span class="pre">Info</span></code> tab is by default the first tab chosen when selecting an individual mutation to analyze. Here, the name of the gene that the pSNV is associated with, which in this example is <em>ANKRD53</em>, is shown at the top as well as the mutations nucleotide change (e.g. G to A), the chromosomal location and the strand the SNV was found in.</p>
+<p>Furthermore, the eight boxes represent key mutational details. First, <em>Recurrence Mutations</em> refers to the number of occurrences of the mutation at this genomic location in other samples, which has been used in identifying functional pSNVs such as within the promoter of <em>TERT</em>. Secondly, the raw and Z-score normalized expression values can be seen here. Within the REMIND-Cancer pipeline, normalization was relative to only those samples within the cohort.</p>
+<p>Next, the presence of this mutation within the Cancer Gene Census (CGC) database is noted here such that a value of <code class="docutils literal notranslate"><span class="pre">True</span></code> means that this gene is a known cancer gene. Additionally, the fact that this mutation lays in a region of open chromatin according to ChromHMM annotations is denoted here. To specifically see regions of open chromatin, refer to the <code class="docutils literal notranslate"><span class="pre">IGV</span> <span class="pre">Genome</span> <span class="pre">Browser</span></code> where these are listed as a track. Furthermore, the variant allele frequency as well as whether this mutation lays within a CpG island is also denoted.</p>
+<p>The last two boxes contain information regarding the predicted created and destroyed TFBS’ according to JASPAR2022. Here, a TFBS is predicted to be created if it’s binding affinity is greater than or equal to 11 whereas it’s predicted to be destroyed if it’s less than or equal to 0.09.</p>
+<p><strong>Notes About The Code</strong>
+To ensure proper display of these boxes, update the <code class="docutils literal notranslate"><span class="pre">_config.py</span></code> file by aligning the dictionary keys in <code class="docutils literal notranslate"><span class="pre">DATAFRAME_SETTINGS</span></code> with your dataset’s column names:</p>
+<ul class="simple">
+<li><p><strong>Recurrence Mutations</strong>: <code class="docutils literal notranslate"><span class="pre">name_of_paths_with_recurrence_column</span></code></p></li>
+<li><p><strong>Gene Expression</strong>: <code class="docutils literal notranslate"><span class="pre">name_of_expression_column</span></code>, <code class="docutils literal notranslate"><span class="pre">name_of_normalized_expression_column</span></code></p></li>
+<li><p><strong>Created Transcription Factors</strong>: <code class="docutils literal notranslate"><span class="pre">name_of_column_with_list_of_created_tfbs</span></code></p></li>
+<li><p><strong>Destroyed Transcription Factors</strong>: <code class="docutils literal notranslate"><span class="pre">name_of_column_with_list_of_destroyed_tfbs</span></code></p></li>
+</ul>
+<p><strong>Note:</strong> The following attributes have not yet been integrated:</p>
+<ul class="simple">
+<li><p><strong>Within CGC List</strong></p></li>
+<li><p><strong>Open Chromatin</strong></p></li>
+<li><p><strong>Allele Frequency</strong></p></li>
+<li><p><strong>CpG Island</strong></p></li>
+</ul>
+<p>Make sure these keys correspond to your dataset to properly render the necessary information.</p>
+</section>
+<section id="gene">
+<h2><code class="docutils literal notranslate"><span class="pre">Gene</span></code><a class="headerlink" href="#gene" title="Link to this heading"></a></h2>
+<p><strong>Example</strong></p>
+<p align="center">
+   <img src="./assets/gene.png" width=90% height="auto">
+</p>
+<p><strong>Description</strong>
+The <code class="docutils literal notranslate"><span class="pre">Gene</span></code> tab offers detailed information about the gene associated with the SNV. It includes <strong>interactive violin plots</strong> that display gene expression across samples. The sample of interest is marked in red while other recurrent samples with the same mutation appear in black. By default, the normalized expression is shown but users can select other measures (e.g., Z-score, raw, logged) from the legend on the right.</p>
+<p>These plots (and all subsequent visualizations) are <strong>interactive</strong>, enabling users to zoom into specific areas by dragging to create a selection box and hover over individual data points for more details. A brief demonstration video is available below:</p>
+<p>https://github.com/user-attachments/assets/07d8c7d2-4a21-4019-aed5-fae15564ab6e</p>
+<p>Below the violin plot, the <strong>NCBI gene function</strong> is shown if available. These descriptions were sourced from <a class="reference external" href="https://github.com/nicholas-abad/ncbi_gene_names_and_descriptions">this repository</a> and last updated on 4 February 2025. The definitions should align with those on <a class="reference internal" href="#GeneCards.com"><span class="xref myst">GeneCards.com</span></a>.</p>
+<p><strong>Notes About The Code</strong>
+Placeholder.</p>
+</section>
+<section id="transcription-factors">
+<h2><code class="docutils literal notranslate"><span class="pre">Transcription</span> <span class="pre">Factors</span></code><a class="headerlink" href="#transcription-factors" title="Link to this heading"></a></h2>
+<p><strong>Example</strong>
+<strong>Description</strong>
+Within the <code class="docutils literal notranslate"><span class="pre">Transcription</span> <span class="pre">Factors</span></code> tab, a secondary set of tabs pop up that represents both the created (green) and destroyed (red) TFBS’.</p>
+<p>Utilizing the Find Individual Motif Occurrences (FIMO) tool from the MEME Suite toolkit along with the JASPAR2020 database of curated transcription factors, the hg19 reference DNA sequence of +/-10 bp around every pSNV underwent scanning by FIMO against every TF motif in JASPAR2020. Using the positional weight matrix of the TF and its associated sequence context, FIMO calculated a statistical binding affinity score, which indicates the likelihood of observing the specific motif. To assess the impact of a mutation, the ratio (denoted as S(TFBS)) between the binding affinity scores for the mutant over the wild type allele was calculated as a quantitative measure indicating the impact of mutations on the binding motif of TFs. Motifs with S(TFBS)&gt;11 were defined as a created TFBS motif and S(TFBS)&lt;0.09 as a destroyed TFBS motif.</p>
+<p>By selecting one of the created or destroyed tabs, the known gene function (similar to the <code class="docutils literal notranslate"><span class="pre">Gene</span></code> tab) is displayed alongside the expression values of the associated transcription factor. By default, the raw expression values serve as a proxy for TF activity, but users can switch to Z-score or logged expression using the options on the right side of the violin plot.</p>
+<p>Below the plots are two pieces of information: the JASPAR2022 sequence logo plot and the actual sequence surrounding the mutation (i.e. sequence context). To verify that the sequence context aligns with the known motif, users can drag the actual sequence on the right to align it with the sequence logo on the left. Ideally, a perfect match should be observed for a created or destroyed TFBS.</p>
+<p>For the sequence logo plot, clicking the left or right arrows toggles between the reverse complement and the original sequence logo.</p>
+<p><strong>Notes About The Code</strong>
+Placeholder.</p>
+</section>
+<section id="igv-genome-browser">
+<h2><code class="docutils literal notranslate"><span class="pre">IGV</span> <span class="pre">Genome</span> <span class="pre">Browser</span></code><a class="headerlink" href="#igv-genome-browser" title="Link to this heading"></a></h2>
+<p><strong>Example</strong></p>
+<p align="center">
+   <img src="./assets/igv_genome_browser.png" width=90% height="auto">
+</p>
+<p><strong>Description</strong>
+The <code class="docutils literal notranslate"><span class="pre">IGV</span> <span class="pre">Genome</span> <span class="pre">Browser</span></code> tab integrates the <strong>Integrative Genomics Viewer (IGV)</strong> to provide a detailed visualization of genomic regions relevant to the selected mutation. This tool allows users to explore regions of open chromatin (ChromHMM track; red), RefSeq genes (RefSeq track; blue) and NCBI reference genes (NCBI track; yellow) mapped according to the hg19 genome assembly.</p>
+<p>To easily pinpoint the mutation, click the Center Line button in the top-right corner. This will add a light gray line indicating the exact mutation position. By default, the browser displays a ±3,000 bp region around the mutation, but users can zoom in or out to adjust the view.</p>
+<p><strong>Notes About The Code</strong>
+Within the Dash ID tab-igv, users can add additional publicly available tracks, including the default RefSeq track and the publicly available NCBI track, which is hosted in an AWS S3 bucket. The ChromHMM track is loaded directly from a BED file utilized in the REMIND-Cancer filtering pipeline. This file is available <a class="reference external" href="https://raw.githubusercontent.com/nicholas-abad/REMIND-Cancer/refs/heads/main/examples/data/annotations/chromhmm.bed">here</a>. Further documentation regarding IGV’s implementation can be seen <a class="reference external" href="https://dash.plotly.com/dash-bio/igv">here</a> using Dash and, in particular, the <a class="reference external" href="https://dash.plotly.com/dash-bio">Dash Bio</a> library.</p>
+</section>
+<section id="deep-pileup">
+<h2><code class="docutils literal notranslate"><span class="pre">Deep</span> <span class="pre">Pileup</span></code><a class="headerlink" href="#deep-pileup" title="Link to this heading"></a></h2>
+<p><strong>Example</strong></p>
+<p align="center">
+   <img src="./assets/deep_pileup.png" width=90% height="auto">
+</p>
+<p><strong>Description</strong>
+The <code class="docutils literal notranslate"><span class="pre">Deep</span> <span class="pre">Pileup</span></code> tab displays quality control plots to help with assessing the signal clarity at the specific genomic location of the selected mutation. The initial two plots are described below:</p>
+<ul class="simple">
+<li><p><strong>Patients with a minor allele frequency greater than 25%</strong></p></li>
+<li><p><strong>Patients with at least 2 variant alleles</strong></p></li>
+</ul>
+<p>Ideally, these plots should show no signal in control samples but a clear signal in tumor samples. Below, a good example (left) and a potential artificat (right) are shown for the ANKRD53 pSNV and NF2 pSNV:</p>
+<p align="center">
+   <img src="./assets/deep_pileup_good_and_bad.png" width=90% height="auto">
+</p>
+<p>These initial plots only include cohorts on the x-axis that exhibit a signal in either tumor or control samples, making visualization easier. However, the subsequent two plots display the same data across all cohorts, providing a broader perspective.</p>
+<p><strong>Notes About The Code</strong>
+These plots were generated within the <code class="docutils literal notranslate"><span class="pre">./src/plots/_get_deep_pileup_plots.py</span></code> file, which generate a plot given a <em>Deep Pileup repository</em>. This repository is nothing more than a folder with genes, genomic locations and their corresponding <code class="docutils literal notranslate"><span class="pre">Overview.tsv</span></code> files. The path to this overarching repository can be changed within the <code class="docutils literal notranslate"><span class="pre">_config.py</span></code> file, particularly within the variable <code class="docutils literal notranslate"><span class="pre">PATH_TO_DEEP_PILEUP_REPOSITORY</span></code>.</p>
+<p>To generate this Deep Pileup repository / folder of overview files, the <a class="reference external" href="https://github.com/nicholas-abad/deep-pileup-wrapper">Deep Pileup repository</a> can be used. In particular, by passing in a metadata file, which maps samples to cohorts as well as samples to the location of their BAM files, the following folder structure will be outputted:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>deep_pileup_repository/
+├── ANKRD53/
+│   ├── chr2:71204529/
+│   │   ├── Overview.tsv
+├── TERT/
+│   ├── chr5:1295228/
+│   │   ├── Overview.tsv
+│   ├── chr5:1295250/
+│   │   ├── Overview.tsv
+├── ...
+</pre></div>
+</div>
+</section>
+<section id="genome-tornado-plots">
+<h2><code class="docutils literal notranslate"><span class="pre">Genome</span> <span class="pre">Tornado</span> <span class="pre">Plots</span></code><a class="headerlink" href="#genome-tornado-plots" title="Link to this heading"></a></h2>
+<p><strong>Example</strong></p>
+<p align="center">
+   <img src="./assets/genome_tornado_plots.png" width=100% height="auto">
+</p>
+<p><strong>Description</strong>
+The <code class="docutils literal notranslate"><span class="pre">Genome</span> <span class="pre">Tornado</span> <span class="pre">Plots</span></code> tab provides an overview of dataset-wide focal deletions and amplifications in comparison to the PCAWG dataset. Since an increase in copy number can lead to higher gene expression, these plots offer insights into convergent tumor evolution, illustrating how different genomic events may drive similar biological outcomes.</p>
+<p><strong>Notes About The Code</strong>
+The code display plots that have been previously-generated using the <a class="reference external" href="https://github.com/nicholas-abad/genome-tornado-plot-wrapper">Genome Tornado Plots Wrapper repository</a>. This wrapper script was initially created to easily flow into the REMIND-Cancer filtering pipeline as well as pSNV Hunter. Please refer to the <a class="reference external" href="https://github.com/chenhong-dkfz/GenomeTornadoPlot">original Genome Tornado Plots repository</a> as well as the corresponding <a class="reference external" href="https://academic.oup.com/bioinformatics/article/38/7/2036/6517781">paper</a>.</p>
+</section>
+<section id="notes">
+<h2><code class="docutils literal notranslate"><span class="pre">Notes</span></code><a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<p><strong>Example</strong></p>
+<p align="center">
+   <img src="./assets/notes.png" width=80% height="auto">
+</p>
+<p><strong>Description</strong>
+The <code class="docutils literal notranslate"><span class="pre">Notes</span></code> tab allows users, whether working individually or as part of a molecular tumor board, to take and save mutation-specific notes that remain private to each entry. Users can add multiple timestamped comments, which can be saved by clicking the Save Comment button and removed by selecting the red X next to the comment.</p>
+<p>This feature is especially useful for recording observations about a mutation’s potential significance, including factors that may warrant further investigation or functional validation in the future.</p>
+<p>Future versions of pSNV Hunter will include the ability to export notes individually, and development is currently in progress to implement this feature.</p>
+<p><strong>Notes About The Code</strong>
+By default, pSNV Hunter creates a new column in the dataframe called <code class="docutils literal notranslate"><span class="pre">Notes</span></code>. If a column with the same name already exists, it may cause conflicts or unexpected behavior.</p>
+</section>
+</section>
+<section id="to-do">
+<h1>To-do:<a class="headerlink" href="#to-do" title="Link to this heading"></a></h1>
+<p>As this is still in the beta version, I’ve compiled a list of features that I still need to integrate below. If you’d like to add to this list, please feel free to contact me, open an issue on GitHub and/or send me a pull request!</p>
+<ul class="simple">
+<li><p>[ ] Containerize with Docker</p></li>
+<li><p>[ ] Ensure compatibility with regular VCFs</p></li>
+<li><p>[ ] Properly implement the <code class="docutils literal notranslate"><span class="pre">Interesting</span></code> column</p></li>
+<li><p>[ ] Ensure that the <code class="docutils literal notranslate"><span class="pre">Notes</span></code> are saved with the ability to export.</p></li>
+<li><p>[ ] Make it available on PyPi</p></li>
+</ul>
+</section>
+<section id="additional-information">
+<h1>Additional Information:<a class="headerlink" href="#additional-information" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>All images displayed, which are within this repository’s <code class="docutils literal notranslate"><span class="pre">assets</span></code> folder, were created using a premium <a class="reference external" href="https://www.Biorender.com">BioRender.com</a> account and are licensed under CC-BY (Creative Commons). For proof of individual image licenses, please contact Nicholas Abad at <code class="docutils literal notranslate"><span class="pre">nicholas.a.abad&#64;gmail.com</span></code>.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="pSNV-Hunter documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Nicholas Allen Baclig Abad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
